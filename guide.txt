@@ -1,0 +1,122 @@
+password : Vir42tual42g
+User name : gpeyre
+passphrase : vir42tual42box42gpeyre
+
+-> Qu'est ce qu'une machine virtuelle et comment cela fonctionne ?
+c'est une emulation d'un ordinateur ou d'un serveur physique qui permet d'exécuter un système
+d'exploitation et des applications comme s'il s'agissait d'une machine physique indépendante.
+Les machines virtuelles sont utilisées dans divers contextes pour diverses raisons, notamment :
+-isoler des applications et utiliser par exmple un systeme d'exploitation different de notre
+machine physique.
+-faire des tests logiciels sur plusieurs plate-formes sansdevoir changer de pc.
+-securiser notre pc physiaque qund on teste de nouveuax logiciels.
+
+-> Pourquoi choisir debian comme systeme d'exploitation ?
+Parce qu'il est plus simple a utiliser. Surtout vis a vis de sa gestion des paquets APT.
+
+-> Difference entre Debian et Rocky
+Develloppement communautaire || Develloppement par une entreprise
+Engagement vers logiciel libre || Creer pour les entreprises
+gestion des paquets simple et efficace avec APT || gestion des paquets avec YUM
+facilite d'utilisation et interface graphique clair || plus complique
+
+-> Difference entre apt et aptitude?
+interface utilisateur plus simple || plus complexe
+resolution des dependance intelligente || resolution des dependances puissante pour situations
+											complexe mais supprime parfois les paquets
+gestion des paquets plus sur || imprevisible 
+"apt-get update" permet de mettre à jour les paquets sur un système Linux.
+
+-> SSH ?
+Secure Shell est un protocole de communication sécurisé utilisé pour accéder à des systèmes
+informatiques à distance via un réseau. Il permet à un utilisateur de se connecter de manière
+sécurisée à un serveur distant, d'exécuter des commandes sur ce serveur, de transférer des
+fichiers, et de gérer des ressources à distance.
+
+-> UFW ?
+"Unccomplicated FireWall: Interface pour configurer un pare feu sur Linux. Gestion simple des
+des processus et regles de pare-feu. 
+
+-> APPArmor ?
+Module de securite sur Linux. restreint les cpacites des applications.
+
+-> LVM ?
+ "Logical Volume Manager" (Gestionnaire de volumes logiques), est un outil de gestion de stockage
+ flexible et puissant. L'intérêt de LVM sur Debian (et d'autres systèmes Linux) réside dans
+ sa capacité à fournir une gestion de stockage plus dynamique et évolutive par rapport aux
+ partitions de disque traditionnelles.
+
+-> sudo ?
+sudo est une commande qui permet aux utilisateurs d'exécuter des commandes
+avec des privilèges superutilisateur (ou administrateur). Le terme "sudo"
+signifie "substitute user do" ou "superuser do".
+En d'autres termes, sudo permet aux utilisateurs autorisés d'exécuter des commandes
+qui nécessitent des autorisations spéciales, telles que l'installation de logiciels,
+la modification de fichiers système, la gestion des utilisateurs etc.
+Cela aide à sécuriser le système en empêchant les utilisateurs non autorisés d'effectuer
+des modifications importantes.
+
+-> cron ?
+Cron est un utilitaire de planification de tâches. Il permet aux utilisateurs et aux
+administrateurs de programmer des tâches pour qu'elles s'exécutent automatiquement à
+des moments spécifiques, à intervalles réguliers ou selon d'autres critères temporels.
+* * * * * commande à exécuter
+- - - - -
+| | | | |
+| | | | +----- Jour de la semaine (0 - 6) (dimanche = 0)
+| | | +------- Mois (1 - 12)
+| | +--------- Jour du mois (1 - 31)
+| +----------- Heure (0 - 23)
++------------- Minute (0 - 59)
+
+-> ouvrir crontab
+sudo crontab -u root -e
+
+
+-> regles password
+modif des fichiers etc/login.defs et etc/pam.d/common-password
+
+-> configuration de sudo
+dans etc/sudoers
+
+-> srcipt monitoring.sh
+
+
+other user : evaluator42
+password : Kratos42Joel
+
+-> Ajouter un groupe:
+sudo groupadd <group_name>
+
+-> Ajouter un nouvel utilisateur:
+sudo adduser <user_name>
+
+-> Assigner l'utiliateur a un groupe:
+sudo usermod -aG <group_name> <user_name>
+
+-> checker les membres d'un groupe
+getent group group_name
+
+-> status UFW
+sudo ufw status
+
+-> autoriser un port-id
+sudo ufw allow <port-id>
+
+-> supprimer la regle
+sudo ufw delete <rule-number>
+
+-> status SSH
+sudo systemctl status ssh
+
+-> checker hostname
+hostnamectl
+
+-> changer le hostname
+hostnamectl set-hostname <new_hostname>
+
+-> afficher la partition
+lsblk
+
+-> verifier que sudo est bien installer 
+dpkg -l | grep sudo --
