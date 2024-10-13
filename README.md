@@ -1,0 +1,1 @@
+This ambitious project aims to introduce students to the fascinating world of virtualization and virtual machines. By providing an immersive dive into this constantly evolving field, we seek to broaden students' horizons by familiarizing them with the fundamental concepts and practical applications of virtualization.
